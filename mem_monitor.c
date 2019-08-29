@@ -1,6 +1,6 @@
 /* 
  * This file is part of the Navi Singh's experiments 
- * (https://github.com/xxxx or http://xxx.github.io).
+ * (https://github.com/navisinghnz9/mem_monitor)
  *
  * Copyright (c) 2019 Navjot Singh.
  * 
