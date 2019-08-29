@@ -32,14 +32,22 @@
  * leading to an infinite recursion
  */
 #define malloc malloc
+#define free free
 
 
 void* malloc_monitor(size_t size, const char *file, int line, const char *func) {
 
     void *ptr = malloc(size);
-    printf ("Allocated = %s, %i, %s, %p[%li]\n", file, line, func, ptr, size);
+    printf ("malloc_monitor() :: allocated = %s, %i, %s, %p[%li]\n", file, line, func, ptr, size);
 
     // FIXME - Add the mem allocation info to linked list
 
     return ptr;
+}
+
+void free_monitor(void *ptr, const char *file, int line, const char *func) {
+  free(ptr);
+  // FIXME - Remove ptr from linked list
+  
+  printf ("free_monitor() :: removed = %s, %i, %s, %p\n", file, line, func, ptr);
 }
